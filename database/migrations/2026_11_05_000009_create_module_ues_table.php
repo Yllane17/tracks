@@ -15,7 +15,8 @@ return new class extends Migration
             $table->enum('type_ue', ["fondamentale", "optionnelle", "transversale"])->default("fondamentale");
             $table->foreignId('id_sem')->constrained('semestres', 'id_sem')->cascadeOnDelete();
             $table->unsignedBigInteger('idFiliere')->nullable();
-            $table->string("id_nieau",10);
+            // $table->string("id_niveau", 10);
+            $table->unsignedBigInteger('id_niveau')->nullable();
             $table->foreign("id_niveau")->references("id_niveau")->on("niveaux")->onDelete("cascade");
             $table->timestamps();
         });

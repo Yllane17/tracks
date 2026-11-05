@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('idSalle')->constrained('salles', 'idSalle')->cascadeOnDelete();
             $table->foreignId('idTranche')->constrained('tranche_horaires', 'idTranche')->cascadeOnDelete();
             $table->foreignId('idEc')->constrained('matiere_ecs', 'idEc')->cascadeOnDelete();
-            $table->foreignId('id_user')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('id_user')->constrained('users', 'id_user')->cascadeOnDelete();
             $table->timestamps();
         });
     }

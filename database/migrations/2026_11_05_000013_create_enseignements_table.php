@@ -8,10 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        
+
         Schema::create('enseignements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+           $table->foreignId('id_user')->constrained('users', 'id_user')->cascadeOnDelete();
             $table->foreignId('idEc')->constrained('matiere_ecs', 'idEc')->cascadeOnDelete();
             $table->enum('type_cours', ['CM', 'TD', 'TP']);
             $table->integer('vol_attribue')->default(0);

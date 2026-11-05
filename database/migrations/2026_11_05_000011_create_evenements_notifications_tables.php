@@ -26,12 +26,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
-       
+
         Schema::create('notification_user', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+           $table->foreignId('id_user')->constrained('users', 'id_user')->cascadeOnDelete();
             $table->foreignId('id_notif')->constrained('app_notifications', 'id_notif')->cascadeOnDelete();
-            $table->unique(['user_id', 'id_notif']);
+            $table->unique(['id_user', 'id_notif']);
         });
     }
 
