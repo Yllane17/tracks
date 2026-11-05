@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ModuleUe
- * 
+ *
  * @property int $idUe
  * @property string $libelle_ue
  * @property int $nbre_credit
@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $id_niveau
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Niveau|null $niveau
  * @property Semestre $semestre
  * @property Filiere|null $filiere
@@ -43,6 +43,7 @@ class ModuleUe extends Model
 	];
 
 	protected $fillable = [
+        'idUe',
 		'libelle_ue',
 		'nbre_credit',
 		'type_ue',

@@ -12,13 +12,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Filiere
- * 
+ *
  * @property int $idFiliere
  * @property string $nomFiliere
  * @property string $code_filiere
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Collection|Departement[] $departements
  * @property Collection|Niveau[] $niveaux
  * @property Collection|ModuleUe[] $module_ues
@@ -31,6 +31,7 @@ class Filiere extends Model
 	protected $primaryKey = 'idFiliere';
 
 	protected $fillable = [
+        'idFiliere',
 		'nomFiliere',
 		'code_filiere'
 	];
