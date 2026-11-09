@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Session
  * 
  * @property string $id
- * @property int|null $id_user
+ * @property int|null $user_id
  * @property string|null $ip_address
  * @property string|null $user_agent
  * @property string $payload
@@ -27,12 +27,12 @@ class Session extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'id_user' => 'int',
+		'user_id' => 'int',
 		'last_activity' => 'int'
 	];
 
 	protected $fillable = [
-		'id_user',
+		'user_id',
 		'ip_address',
 		'user_agent',
 		'payload',

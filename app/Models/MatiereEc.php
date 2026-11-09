@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class MatiereEc
- *
+ * 
  * @property int $idEc
  * @property string $libelle
  * @property int $credit
@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idUe
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
+ * 
  * @property ModuleUe $module_ue
  * @property Collection|Enseignement[] $enseignements
  * @property Collection|Seance[] $seances
@@ -46,7 +46,6 @@ class MatiereEc extends Model
 	];
 
 	protected $fillable = [
-        'idEc',
 		'libelle',
 		'credit',
 		'vol_horaire',

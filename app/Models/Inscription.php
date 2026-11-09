@@ -7,12 +7,11 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use App\Models\Classe;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Inscription
- *
+ * 
  * @property int $id
  * @property int $id_user
  * @property int $idClasse
@@ -20,10 +19,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $date_inscription
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
+ * 
  * @property AnneeAcademique $annee_academique
  * @property User $user
- * @property Classe $classe
+ * @property Class $class
  *
  * @package App\Models
  */
@@ -54,8 +53,8 @@ class Inscription extends Model
 		return $this->belongsTo(User::class, 'id_user');
 	}
 
-	public function classe()
+	public function class()
 	{
-		return $this->belongsTo('App\\Models\\Classe', 'idClasse');
+		return $this->belongsTo(Class::class, 'idClasse');
 	}
 }

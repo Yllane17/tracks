@@ -15,6 +15,9 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id_departement
  * @property string $nom_departement
+ * @property string|null $departement_description
+ * @property string|null $departement_sigle
+ * @property string|null $departement_logo
  * @property int|null $idFiliere
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -35,6 +38,9 @@ class Departement extends Model
 
 	protected $fillable = [
 		'nom_departement',
+		'departement_description',
+		'departement_sigle',
+		'departement_logo',
 		'idFiliere'
 	];
 
