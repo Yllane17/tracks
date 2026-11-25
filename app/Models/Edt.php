@@ -9,48 +9,49 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Edt
- * 
- * @property int $id_Edt
+ *
+ * @property int $id_edt
  * @property Carbon $date_debut
  * @property Carbon $date_fin
- * @property string $statut_edt
- * @property int $idClasse
+ * @property string $statut
+ * @property string $code_classe
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
- * @property Class $class
+ *
+ * @property Classe $classe
  * @property Collection|Seance[] $seances
  *
  * @package App\Models
  */
 class Edt extends Model
 {
-	protected $table = 'edts';
-	protected $primaryKey = 'id_Edt';
+	protected $table = 'edt';
+	protected $primaryKey = 'id_edt';
 
 	protected $casts = [
-		'date_debut' => 'datetime',
-		'date_fin' => 'datetime',
-		'idClasse' => 'int'
+		'date_debut' => 'date',
+		'date_fin' => 'date'
 	];
 
 	protected $fillable = [
 		'date_debut',
 		'date_fin',
-		'statut_edt',
-		'idClasse'
+		'statut',
+		'code_classe'
 	];
 
-	public function class()
+	public function classe(): BelongsTo
 	{
-		return $this->belongsTo(Class::class, 'idClasse');
+		return $this->belongsTo(Classe::class, 'code_classe', 'code_classe');
 	}
 
-	public function seances()
+	public function seances(): HasMany
 	{
-		return $this->hasMany(Seance::class, 'id_Edt');
+		return $this->hasMany(Seance::class, 'id_edt');
 	}
 }

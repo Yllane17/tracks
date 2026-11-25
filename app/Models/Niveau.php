@@ -12,13 +12,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Niveau
- * 
+ *
  * @property int $id_niveau
  * @property string $libelle_niveau
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
- * @property Collection|Class[] $classes
+ *
+ * @property Collection|Classe[] $classes
  * @property Collection|Filiere[] $filieres
  * @property Collection|ModuleUe[] $module_ues
  *
@@ -35,7 +35,7 @@ class Niveau extends Model
 
 	public function classes()
 	{
-		return $this->hasMany(Class::class, 'id_niveau');
+		return $this->hasMany(Classe::class, 'id_niveau');
 	}
 
 	public function filieres()

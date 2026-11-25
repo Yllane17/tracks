@@ -1,0 +1,18 @@
+Installer et configurer Tailwind
+Creer un fichier JSON contenant la liste des departements et des filieres a la racine du projet
+creer un component departement_card qui affiche les infos d'un departement
+// pour filierer
+afficher à la page d'accueil la liste des departement et des filieres provenent du JSON
+
+npm install -D tailwindcss @tailwindcss/vite
+
+1- /resources/view/administration/départements.blade.php
+2- Gestion des dept =, formulaires
+
+php artisan make:controller FiliereRessourceController -r
+
+================================
+DEVOIR A FAIRE OHHHHHHHHHHHHHHH
+================================
+
+Finir le menu admin et Utilasateurs(import excel, fitres[classes, filieres], pagination [1,2,3...,99])

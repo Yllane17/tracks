@@ -9,11 +9,12 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Salle
  * 
- * @property int $idSalle
+ * @property int $id_salle
  * @property string $libelle_salle
  * @property int $nbre_place
  * @property string $batiment
@@ -26,8 +27,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Salle extends Model
 {
-	protected $table = 'salles';
-	protected $primaryKey = 'idSalle';
+	protected $table = 'salle';
+	protected $primaryKey = 'id_salle';
 
 	protected $casts = [
 		'nbre_place' => 'int'
@@ -39,8 +40,8 @@ class Salle extends Model
 		'batiment'
 	];
 
-	public function seances()
+	public function seances(): HasMany
 	{
-		return $this->hasMany(Seance::class, 'idSalle');
+		return $this->hasMany(Seance::class, 'id_salle');
 	}
 }
